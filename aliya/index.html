@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Алматинский экономический колледж</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    #application-form {
+      margin: 0 auto;
+      width: 50%;
+    }
+  </style>
+</head>
+<body>
+    <section id="home">
+  <header>
+    <h1 class="mm">АЛМАТИНСКИЙ ЭКОНОМИЧЕСКИЙ КОЛЛЕДЖ</h1>
+    <div class="menu">
+    <nav>
+      <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#welcome">О колледже</a></li>
+        <li><a href="#specialties">Специальности</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    </div>
+  </header>
+</section>
+    <main id="main" class="main">
+    <section id="welcome" class="welcome ">
+      <div class="container">
+        <span class="heading">Добро пожаловать в</span>
+        <p class="heading">Алматинский Экономический Колледж</p>
+
+        <div class="links">
+          <a href="https://almec.kz/" target="_blank" class="link">Подробнее</a>
+        </div>
+      </div>
+    </section>
+
+  <section id="specialties">
+    <h1 class="spec">Выберите cпециальность</h1>
+    <section id="top-section">
+        <div class="block">
+          <h3>06130100 – Программное обеспечение</h3>
+          <img src="free-icon-software-2209817.png" alt="" width="150px" height="150px">
+          <p>3W06130102 – Web-дизайнер</p>
+        </div>
+    
+        <div class="block">
+          <h3>10130300 – Организация питания</h3>
+          <img src="free-icon-chef-450064.png" alt="" width="150px" height="150px">
+          <p>3W10130302 – Повар</p>
+        </div>
+    
+        <div class="block">
+          <h3>4120100 – Банковское и страховое дело</h3>
+          <img src="free-icon-claim-4784265.png" alt="" width="150px" height="150px">
+          <p>4S120100-Менеджер по банковским операциям</p>
+        </div>
+      </section>
+    
+      <section id="bottom-section">
+        <div class="block">
+          <h3>04110100 – Учет и аудит</h3>
+          <img src="free-icon-bookkeeping-4420211.png" alt="" width="150px" height="150px">
+          <p>4S04110102 – Бухгалтер</p>
+        </div>
+    
+        <div class="block">
+          <h3>07210600 – Производство пива, безалкогольных и спиртных напитков</h3>
+          <img src="free-icon-beer-2659747.png" alt="" width="150px" height="150px">
+          <p>3W07210602 – Оператор по производству пива</p>
+        </div>
+    
+        <div class="block">
+          <h3>07210300 – Хлебопекарное, макаронное и кондитерское производство</h3>
+          <img src="free-icon-pastry-chef-527779.png" alt="" width="150px" height="150px">
+          <p>3W07210302 – Кондитер</p>
+        </div>
+      </section>
+
+  </section>
+
+  <section id="form">
+    <h1 class="ff">Форма заявки</h1>
+<form action="index.php" method="post">
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="first-name" required>
+
+      <label for="surname">Фамилия:</label>
+      <input type="text" id="surname" name="surname" required>
+
+      <label for="email">Почта:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Номер телефона:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="city">Город:</label>
+      <input type="text" id="city" name="city" required>
+
+      <label for="specialization">Специальность:</label>
+        <select id="specialization" name="specialization">
+        <option value="06130100">Программное обеспечение</option>
+        <option value="10130300">Организация питания</option>
+        <option value="4120100">Банковское и страховое дело</option>
+        <option value="04110100">Учет и аудит</option>
+        <option value="07210600">Производство пива, безалкогольных и спиртных напитков</option>
+        <option value="07210300">Хлебопекарное, макаронное и кондитерское производство</option>
+        </select>
+
+        <label for="qualification">Квалификации:</label>
+    <select id="qualification" name="qualification">
+      <option value="3W06130102">Web-дизайнер</option>
+      <option value="3W10130302">Повар</option>
+      <option value="4S120100">Менеджер по банковским операциям</option>
+      <option value="4S04110102">Бухгалтер</option>
+      <option value="3W07210602">Оператор по производству пива</option>
+      <option value="3W07210302">Кондитер</option>
+    </select>
+
+    <label for="question">Вопрос:</label>
+    <textarea type="text" id="question" name="question" placeholder="Задайте вопрос:"></textarea>
+    <input class="submit1" type="submit" value="Отправить">
+    </section>
+  <script>
+    document.getElementById("specialization").addEventListener("change", function () {
+        var specializationSelect = this;
+        var qualificationSelect = document.getElementById("qualification");
+
+        var selectedSpecialization = specializationSelect.value;
+        var matchingQualification = "";
+
+        switch (selectedSpecialization) {
+            case "06130100":
+                matchingQualification = "3W06130102";
+                break;
+            case "10130300":
+                matchingQualification = "3W10130302";
+                break;
+            case "4120100":
+                matchingQualification = "4S120100";
+                break;
+            case "04110100":
+                matchingQualification = "4S04110102";
+                break;
+            case "07210600":
+                matchingQualification = "3W07210602";
+                break;
+            case "07210300":
+                matchingQualification = "3W07210302";
+                break;
+        }
+        qualificationSelect.value = matchingQualification;
+    });
+    </script>
+</form>
+<section id="contacts">
+<footer id="footer" class="footer">
+    <div class="desc">
+      <div class="container desc-container">
+        <div class="footer__about">
+          <h4>О Колледже</h4>
+          <p>Алматинский экономический колледж (АЭК) – государственное учебное заведение, более 80 лет осуществляющее подготовку квалифицированных кадров по специальностям экономического и технологического профилей, в сферах питания и информационных технологий. </p>
+        </div>
+        <div class="coll">
+          <h4>Насчет поступления:</h4>
+          <p>+7 (702) 627 50 69<br>
+            +7 (707) 627 50 69<br>
+            +7 (776) 627 50 69<br>
+            <strong>Приёмная:</strong> + 7 (727) 233 45 97<br>
+            <strong>Бухгалтерия:</strong> + 7 (727) 233 46 05<br>
+            <strong>E-mail: </strong>aec.almaty@yandex.kz</p></p>
+        </div>
+        <div class="social">
+          <h4>Социальные сети</h4>
+            <li>
+              <img src="instagram.png" alt="">
+              <a href="https://www.instagram.com/aec.almaty.official/" target="_blank">Instagram</a>
+            </li>
+            <li>
+              <img src="whatsapp.png" alt="">
+              <a href="https://api.whatsapp.com/send?phone=https://wa.me/77026275069" target="_blank">WhatsApp</a>
+            </li>
+            <li>
+              <img src="youtube.png" alt="">
+              <a href="https://www.youtube.com/channel/UCyS38_yeaEIh8qMkzVGXTWg/videos" target="_blank">YouTube</a>
+            </li>
+        </div>
+      </div>
+    </div>
+</footer>
+ <div class="footer-al">
+    © 2023 Название вашего колледжа. Все права защищены.
+    </div>
+</section>
+</body>
+</html>
